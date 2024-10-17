@@ -2,11 +2,12 @@ const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 var cors = require('cors')
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const KLAVIYO_API_KEY = process.env.API_KEY;
 
-const KLAVIYO_API_KEY = 'pk_abee3e745673a437b554e27a9d6f8c4f07';
 const headers = 
 {
   'Content-Type': 'application/json',
