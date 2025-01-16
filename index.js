@@ -14,7 +14,7 @@ const headers =
 {
   'Content-Type': 'application/json',
   'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
-  'revision': '2024-07-15'
+  'revision': '2025-01-15'
 };
 
 app.use(bodyParser.json());
