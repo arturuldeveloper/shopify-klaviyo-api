@@ -21,6 +21,7 @@ app.use(cors())
 
 app.post('/api/subscribe', async (req, res) => {
   const { email, listId } = req.body;
+  console.log('email:', email);
   const profileData = {
     data: {
       type: 'profile',
@@ -34,7 +35,7 @@ app.post('/api/subscribe', async (req, res) => {
     const response = await axios.post('https://a.klaviyo.com/api/profiles/', profileData, {
       headers: headers
     });
-
+    console.log('response:', response);
     if(response?.data?.data?.id)
     {
       const listdata = {
@@ -53,6 +54,7 @@ app.post('/api/subscribe', async (req, res) => {
       };
     }
   } catch (error) {
+    console.log('error:', error);
     if(error?.response?.status == 409){
       try {
         error?.response?.data?.errors[0]?.meta?.duplicate_profile_id
