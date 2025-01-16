@@ -8,6 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const KLAVIYO_API_KEY = process.env.API_KEY;
 
+console.log('API_KEY:', KLAVIYO_API_KEY);
+
 const headers = 
 {
   'Content-Type': 'application/json',
